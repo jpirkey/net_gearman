@@ -24,7 +24,6 @@
 
 // Check to see if composer class loader is being used instead of PEAR
 if ( ! class_exists('Composer\Autoload\ClassLoader', false)) {
-    require_once 'Net/Gearman/Exception.php';
 
     /**
      * Exception class for Net_Gearman
