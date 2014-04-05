@@ -22,7 +22,7 @@
  */
 
 // Check to see if composer class loader is being used instead of PEAR
-if ( ! class_exists('Composer\Autoload\ClassLoader', false)) {
+if ( ! class_exists('Composer\\Autoload\\ClassLoader', false)) {
     require_once 'Net/Gearman/Job/Common.php';
     require_once 'Net/Gearman/Exception.php';
 }
