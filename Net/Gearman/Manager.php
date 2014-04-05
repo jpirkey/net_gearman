@@ -15,12 +15,16 @@
  * @package   Net_Gearman
  * @author    Joe Stump <joe@joestump.net>
  * @author    Brian Moon <brianm@dealnews.com>
+ * @author    Jason Pirkey <jason@pirkplace.com>
  * @copyright 2007-2008 Digg.com, Inc.
  * @license   http://www.opensource.org/licenses/bsd-license.php New BSD License
  * @link      https://github.com/brianlmoon/net_gearman
  */
 
-require_once 'Net/Gearman/Connection.php';
+// Check to see if composer class loader is being used instead of PEAR
+if ( ! class_exists('Composer\Autoload\ClassLoader', false)) {
+    require_once 'Net/Gearman/Connection.php';
+}
 
 /**
  * A client for managing Gearmand servers
@@ -316,5 +320,3 @@ class Net_Gearman_Manager
         $this->disconnect();
     }
 }
-
-?>

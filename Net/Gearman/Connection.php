@@ -21,7 +21,10 @@
  * @link      https://github.com/brianlmoon/net_gearman
  */
 
-require_once 'Net/Gearman/Exception.php';
+// Check to see if composer class loader is being used instead of PEAR
+if ( ! class_exists('Composer\Autoload\ClassLoader', false)) {
+    require_once 'Net/Gearman/Exception.php';
+}
 
 /**
  * The base connection class
@@ -456,5 +459,3 @@ class Net_Gearman_Connection
         }
     }
 }
-
-?>

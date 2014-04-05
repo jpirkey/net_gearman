@@ -14,6 +14,7 @@
  * @category  Net
  * @package   Net_Gearman
  * @author    Joe Stump <joe@joestump.net>
+ * @author    Jason Pirkey <jason@pirkplace.com>
  * @copyright 2007-2008 Digg.com, Inc.
  * @license   http://www.opensource.org/licenses/bsd-license.php New BSD License
  * @version   CVS: $Id$
@@ -21,7 +22,10 @@
  * @link      http://www.danga.com/gearman/
  */
 
-require_once 'Net/Gearman/Job/Exception.php';
+// Check to see if composer class loader is being used instead of PEAR
+if ( ! class_exists('Composer\Autoload\ClassLoader', false)) {
+    require_once 'Net/Gearman/Job/Exception.php';
+}
 
 /**
  * Base job class for all Gearman jobs
