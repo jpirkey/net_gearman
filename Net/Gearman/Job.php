@@ -87,7 +87,7 @@ abstract class Net_Gearman_Job
         }
 
         if (!class_exists($class)) {
-            throw new Net_Gearman_Job_Exception('Invalid Job class: ' . (empty($class) ? '<empty>' : $file));
+            throw new Net_Gearman_Job_Exception('Invalid Job class: ' . (empty($class) ? '<empty>' : $class) . ' in ' . (empty($file) ? '<empty>' : $file) );
         }
 
         $instance = new $class($conn, $handle, $initParams);
